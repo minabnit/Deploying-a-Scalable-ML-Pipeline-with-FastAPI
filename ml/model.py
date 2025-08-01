@@ -21,7 +21,7 @@ def train_model(X_train, y_train):
         Trained machine learning model.
     """
     # TODO: implement the function
-    model = AdaBoostClassifier(n_estimators=300, learning_rate=0.2)
+    model = AdaBoostClassifier(random_state=3, n_estimators=300, learning_rate=0.2)
     model.fit(X_train, y_train)
     return model
     pass
