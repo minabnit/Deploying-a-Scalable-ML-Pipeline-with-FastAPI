@@ -1,28 +1,32 @@
 import pytest
-# TODO: add necessary import
+import pandas as pd
+import os
 
-# TODO: implement the first test. Change the function name and input as needed
-def test_one():
-    """
-    # add description for the first test
-    """
-    # Your code here
+@pytest.fixture(scope="session")
+def dataset():
+    project_path = './'
+    data_path = os.path.join(project_path, "data", "census.csv")
+    data = pd.read_csv(data_path)
+    return data
+
+def test_NumberOfColumns(dataset):
+    assert dataset.shape[1] == 15
     pass
 
 
 # TODO: implement the second test. Change the function name and input as needed
-def test_two():
-    """
+#def test_two():
+    #"""
     # add description for the second test
-    """
+    #"""
     # Your code here
-    pass
+#    pass
 
 
 # TODO: implement the third test. Change the function name and input as needed
-def test_three():
-    """
+#def test_three():
+    #"""
     # add description for the third test
-    """
+    #"""
     # Your code here
-    pass
+#    pass

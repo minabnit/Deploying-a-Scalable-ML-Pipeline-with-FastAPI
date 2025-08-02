@@ -20,7 +20,7 @@ def train_model(X_train, y_train):
     model
         Trained machine learning model.
     """
-    # TODO: implement the function
+    # implement the function
     model = AdaBoostClassifier(random_state=3, n_estimators=300, learning_rate=0.2)
     model.fit(X_train, y_train)
     return model
@@ -54,7 +54,7 @@ def inference(model, X):
 
     Inputs
     ------
-    model : ???
+    model : ADABoost Classifier
         Trained machine learning model.
     X : np.array
         Data used for prediction.
@@ -63,7 +63,7 @@ def inference(model, X):
     preds : np.array
         Predictions from the model.
     """
-    # TODO: implement the function
+    # implement the function
     preds = model.predict(X)
     return preds
     pass
@@ -78,14 +78,14 @@ def save_model(model, path):
     path : str
         Path to save pickle file.
     """
-    # TODO: implement the function
+    # implement the function
     with open(path, 'wb') as file:
         pickle.dump(model, file)
     pass
 
 def load_model(path):
     """ Loads pickle file from `path` and returns it."""
-    # TODO: implement the function
+    # implement the function
     with open(path, 'rb') as file:
         model = pickle.load(file)
     return model
@@ -118,7 +118,7 @@ def performance_on_categorical_slice(
         Trained sklearn OneHotEncoder, only used if training=False.
     lb : sklearn.preprocessing._label.LabelBinarizer
         Trained sklearn LabelBinarizer, only used if training=False.
-    model : ???
+    model : ADABoost Classifier
         Model used for the task.
 
     Returns
@@ -128,7 +128,7 @@ def performance_on_categorical_slice(
     fbeta : float
 
     """
-    # TODO: implement the function
+    # implement the function
     #slice = data[data[column_name] == slice_value]
     X_slice, y_slice, _, _ = process_data(
         data[data[column_name] == slice_value],
